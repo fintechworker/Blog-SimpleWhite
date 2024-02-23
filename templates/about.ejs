@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<!-- head--->
+    <%- include('./_blocks/common') %>
+	<meta name="keywords" content="<%= $page.mainTitle %>">
+    <title><%= $page.mainTitle %>-<%= $site.siteName %></title>
+</head>
+<body>
+<!-- 头部 -->
+<%- include('./_blocks/header') %>
+<t></t>
+
+<!-- 内容 -->
+<div class="content container" data-content>
+    <!-- 一级 -->
+    <ul class="list row bj-white" id="list-1">
+        <li class="title">
+            <i class="iconfont c-hong">&#xe940;</i>热门推介<label>欢迎访问IT民工的网站！</label>
+        </li>
+        <div>
+            <li class="cont-req">
+                <a class="t1_pick"><img src="/_assets/images/header-img-1.jpg"/></a>
+				<h3><a href="javascript:;">美丽的向日葵</a></h3>
+
+            </li>
+            <li class="cont-req">
+                <a class="t1_pick"><img src="/_assets/images/header-img-2.jpg"/></a>
+				<h3><a href="javascript:;">枫叶山</a></h3>
+
+            </li>
+            <li class="cont-req">
+                <a class="t1_pick"><img src="/_assets/images/header-img-3.jpg"/></a>
+				<h3><a href="javascript:;">大峡谷</a></h3>
+
+            </li>
+            <li class="cont-req">
+                <a class="t1_pick"><img src="/_assets/images/header-img-4.jpg"/></a>
+				<h3><a href="javascript:;">吊桥</a></h3>
+            </li>
+            <li class="cont-req">
+                <a class="t1_pick"><img src="/_assets/images/header-img-5.jpg"/></a>
+				<h3><a href="javascript:;">花朵</a></h3>
+            </li>
+        </div>
+    </ul>
+
+    <!-- 二级 -->
+    <div class="love2" >
+
+        <div class="left">
+            <!-- 文章主体 -->
+            <div class="contents">
+                <div class="title"><%= $page.mainTitle %></div>
+                <div class="ner" style="height:800px;">
+                  <%- $page.content %>
+				 
+                </div>
+                <div class="label"> 转载请注明出处！--- IT民工 </div>
+                
+            </div>           
+        </div>
+	<!----侧边栏 --->
+	<%- include('./_blocks/right') %>
+
+    </div>
+</div>
+<!-- 底部 -->
+<%- include('./_blocks/footer') %>
+
+<!-- 侧边栏 -->
+
+<%- include('./_blocks/rightbar') %>
+
+</body>
+</html>

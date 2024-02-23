@@ -1,0 +1,22 @@
+<div class="header">
+    <div class="container header-all phone">
+        <div class="logo"><a href="<%= $link.index %>"><img src="/_assets/images/logo.png"/></a></div>
+        <div class="phone-show" id="phone-show">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="nav" id="header-nav">
+		<% const menuIcon = ['&#xe6cb;', '&#xe690;', '&#xe69e;','&#xe647;','&#xe651','&#xe649','&#xe653','&#xe677','&#xe67f','&#xe681','&#xe68e','&#xe68f']; %>
+		<% var countIcon = 0; %>
+		<% for (const menuItem of $page.menu) {%>
+          <li><a href="<%= menuItem.link %>"><i class="iconfont"><%- menuIcon[countIcon] %></i><%= menuItem.label %></a></li>
+        <% countIcon=countIcon+1;   %>
+		<% } %> 
+		<% if($link.rss) { %>
+          <li><a href="<%= $link.rss %>"><i class="iconfont">&#xe6cb;</i>RSS</a></li>
+        <% } %>  
+	           
+        </ul>
+    </div>
+</div>
