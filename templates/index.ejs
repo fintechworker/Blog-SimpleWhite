@@ -13,42 +13,13 @@
 <!-- 内容 -->
 <div class="content container" >
     <!-- 一级 -->
-    <ul class="list row bj-white" id="list-1">
-        <li class="title">
-            <i class="iconfont c-hong">&#xe940;</i>热门推介<label>欢迎访问IT民工的网站！</label>
-        </li>
-        <div>
-            <li class="cont-req">
-                <a class="t1_pick"><img src="/_assets/images/header-img-1.jpg"/></a>
-				<h3><a href="javascript:;">美丽的向日葵</a></h3>
-
-            </li>
-            <li class="cont-req">
-                <a class="t1_pick"><img src="/_assets/images/header-img-2.jpg"/></a>
-				<h3><a href="javascript:;">枫叶山</a></h3>
-
-            </li>
-            <li class="cont-req">
-                <a class="t1_pick"><img src="/_assets/images/header-img-3.jpg"/></a>
-				<h3><a href="javascript:;">大峡谷</a></h3>
-
-            </li>
-            <li class="cont-req">
-                <a class="t1_pick"><img src="/_assets/images/header-img-4.jpg"/></a>
-				<h3><a href="javascript:;">吊桥</a></h3>
-            </li>
-            <li class="cont-req">
-                <a class="t1_pick"><img src="/_assets/images/header-img-5.jpg"/></a>
-				<h3><a href="javascript:;">花朵</a></h3>
-            </li>
-        </div>
-    </ul>
+	<%- include('./_blocks/imagesbar') %>
     <!-- 二级 -->
     <div class="love2" id="list-2">
         <div class="left" id="list-left">
             <ul class="list row list-hen">
                 <li class="title title-lv">
-                    <span class="badge badge-secondary">HOT</span>最热文章<label><% const hotArticle = _.sample($site.articles);%><a href="/<%= hotArticle.fullUrl %>"><%= hotArticle.title %></a></label>
+                    <span class="badge badge-secondary">HOT</span>最热文章<label><% const hotArticle = _.sample($site.articles);%><a href="/<%= hotArticle.fullUrl %>.html"><%= hotArticle.title %></a></label>
                 </li>
 				<%  const currentYear = new Date().getFullYear();
 					const firtMillisecondsThisYear = new Date(currentYear,0,1,0,0,0,0).getTime(); 
@@ -57,9 +28,9 @@
 				%>
 				<% for (const article of articlesOfThisYear) { %>
 				<li class="cont-req2">
-					<a href="/<%= article.fullUrl %>" class="t2_pick"><img src="/_assets/images/titile-img-<%=Math.floor(Math.random() * 13) + 1 %>.jpg" alt=""></a>
+					<a href="/<%= article.fullUrl %>.html" class="t2_pick"><img src="/_assets/images/titile-img-<%=Math.floor(Math.random() * 13) + 1 %>.jpg" alt=""></a>
 						<div class="lvti">
-							<h2><a href="/<%= article.fullUrl %>"><%= article.title %></a></h2>
+							<h2><a href="/<%= article.fullUrl %>.html"><%= article.title %></a></h2>
 							<div class="content"><% var htmlArticle = markdown.toHTML(article.content); %><%- htmlArticle.replace(/<[^>]+>/g,"").replace(/[\r\n\s]/g, "").replace(" ","").substr(0,150) %>...</div>
 							<ul class="entry-meta">
 								<li>
@@ -80,7 +51,7 @@
 								</li>
 								
 								<li class="btn-Msg">
-									<a href="/<%= article.fullUrl %>">阅读全文</a>
+									<a href="/<%= article.fullUrl %>.html">阅读全文</a>
 								</li>
 							</ul>
 						</div>			
